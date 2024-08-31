@@ -48,7 +48,7 @@ function OmicronLab_Avro_Phonetic:parse(input)
         local start, end_pos, prev = cur, cur + 1, cur - 1
 
         -- max look up is 5 characters as the largest pattern is of size 5
-        local pattern = self.trie:findInTrie(fixed:sub(start, start + 5))
+        local pattern = self.trie:findInTrie(fixed:sub(start, start + 4))
         if pattern ~= nil then
             end_pos = cur + #pattern.find - 1
             prev = start - 1
